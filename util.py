@@ -8,7 +8,7 @@ from pathlib import Path
 import time
 
 import timm
-from mylucent.lucent.optvis import objectives
+from lucent.optvis import objectives
 from torch import nn as nn
 
 

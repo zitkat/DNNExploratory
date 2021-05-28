@@ -20,7 +20,7 @@ from settings import load_settings
               help="Can be 'pretrained', 'initialized' or path to pth file with state dict.")
 @click.option("-sv", "--settings-version", type=str, default="Default",
               help="column in settings file to use as settings")
-@click.option("--settings-file", type=Path, default=Path("settings.ods"))
+@click.option("--settings-file", type=Path, default=Path("data/settings.ods"))
 @click.option("--output", type=Path, default=Path("data"))
 @click.option("--hide-progress", is_flag=True)
 def main(model_name : str, model_weights : str, settings_version : str,

@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-from mylucent.lucent.optvis import transform
+from lucent.optvis import transform
 import numpy as np
 import csv
 
