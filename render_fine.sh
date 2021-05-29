@@ -21,7 +21,7 @@
 trap 'clean_scratch' TERM EXIT
 
 module add anaconda3-2019.10
-source activate /storage/plzen1/home/zitkat/.conda/envs/Clef_TBT_env || exit $LINENO
+source activate Clef_TBT_env || exit $LINENO
 
 #mkdir "$SCRATCHDIR"/data || exit $LINENO
 cp -r /storage/plzen1/home/zitkat/DNNExploratory/ "$SCRATCHDIR" || exit $LINENO
@@ -30,10 +30,10 @@ WORK_PATH=$SCRATCHDIR/DNNExploratory/
 
 cd "$WORK_PATH" || exit $LINENO
 today=$(date +%Y%m%d%H%M)
-python render_timm_model.py seresnext50_32x4d -w $  -sv v1 \
+python render_timm_model.py seresnext50_32x4d -w initialized  -sv v1 \
                             --output "$DATA_PATH" \
                             --hide-progress \
-                            --settings-file "$DATA_PATH"/settings.ods > today.log
-cp -r "$DATA_PATH" /storage/plzen1/home/zitkat/DNNExplorer/data || exit $LINENO
+                            --settings-file "$DATA_PATH"/settings.ods > "$DATA_PATH"/"$today".log
+cp -ru "$DATA_PATH" /storage/plzen1/home/zitkat/DNNExplorer/data || exit $LINENO
 
 
