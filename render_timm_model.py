@@ -25,7 +25,7 @@ from settings import load_settings
 @click.option("--hide-progress", is_flag=True)
 def main(model_name : str, model_weights : str, settings_version : str,
          settings_file : Path, output : Path, hide_progress : bool):
-    modes = ["neuron", "channel"]
+    modes = ["neuron"]
 
     settings = load_settings(settings_file, settings_version)
 
