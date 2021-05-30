@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -q gpu
-#PBS -l walltime=8:00:00
+#PBS -l walltime=4:00:00
 #PBS -l select=1:ncpus=1:ngpus=1:mem=10gb:scratch_ssd=20gb:cluster=adan
 #PBS -j oe
 #PBS -o /storage/plzen1/home/zitkat/
@@ -34,6 +34,7 @@ python render_timm_model.py seresnext50_32x4d -w initialized  -sv v1 \
                             --output "$DATA_PATH" \
                             --hide-progress \
                             --settings-file "$DATA_PATH"/settings.ods > "$DATA_PATH"/"$today".log
-cp -ru "$DATA_PATH" /storage/plzen1/home/zitkat/DNNExplorer/data || exit $LINENO
+cp -ru "$DATA_PATH" /storage/plzen1/home/zitkat/DNNExploratoryRes/ || export CLEAN_SCRATCH=False
+
 
 
